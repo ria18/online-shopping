@@ -30,6 +30,7 @@ The dispatcher-servlet.xml file contains all of your configuration for Spring MV
 
    ">
    <context:component-scan base-package="de.tqg.onlineshopping.controller"/>
+   <context:component-scan base-package="de.tqg.shoppingbackend.daoimpl"/>
    <bean id = "viewResolver"
    class="org.springframework.web.servlet.view.InternalResourceViewResolver">
    
