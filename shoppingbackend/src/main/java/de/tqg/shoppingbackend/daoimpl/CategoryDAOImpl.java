@@ -27,7 +27,7 @@ public class CategoryDAOImpl implements CategoryDAO {
 		
 		
 		// secound category 
-		
+		category = new Category();
 		category.setId(2);
 		category.setName("TV");
 		category.setDescreption("this is some descraption for Televition");
@@ -36,7 +36,7 @@ public class CategoryDAOImpl implements CategoryDAO {
 		
 		
 		// third category 
-		
+		 category = new Category();
 		category.setId(3);
 		category.setName("Laptop");
 		category.setDescreption("this is some descraption for Laptop");
@@ -48,7 +48,7 @@ public class CategoryDAOImpl implements CategoryDAO {
 	@Override
 	public List<Category> list() {
 		// TODO Auto-generated method stub
-	
+
 		return categories;
 	}
 
