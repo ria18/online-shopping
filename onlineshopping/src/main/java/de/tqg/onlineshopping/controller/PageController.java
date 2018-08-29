@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import de.tqg.shoppingbackend.dao.CategoryDAO;
+import de.tqg.shoppingbackend.dto.Category;
 
 @Controller
 public class PageController {
@@ -47,4 +48,35 @@ public class PageController {
 		mv.addObject("userClickContact", true);
 		return mv;
 	}
+	
+	// Merhod to load all the products 
+	
+	@RequestMapping(value ="/show/all/products")
+	public ModelAndView showAllProducts() {
+		ModelAndView mv = new ModelAndView("page");
+		mv.addObject("title", "All Products");
+		
+		// passing the list categories
+		mv.addObject("categories", categoryDAO.list());
+		mv.addObject("userClickAllProducts", true);
+		return mv;
+	}
+	
+	@RequestMapping(value ="/show/category/{id}/products")
+	public ModelAndView showCategoryProducts(@PathVariable("id") int id) {
+		ModelAndView mv = new ModelAndView("page");
+		//categoryDAO to fetch a single category
+		Category category = null;
+		category=categoryDAO.get(id);
+		mv.addObject("title",  category.getName());
+		
+		// passing the list categories
+		mv.addObject("categories", categoryDAO.list());
+		
+		//passing the category single object 
+		mv.addObject("category", category);
+		mv.addObject("userClickCategoryProducts", true);
+		return mv;
+	}
+
 }

@@ -1,12 +1,11 @@
-<!-- 
-The dispatcher-servlet.xml file contains all of your configuration for Spring MVC.
+<!-- The dispatcher-servlet.xml file contains all of your configuration for Spring MVC.
  So in it you will find beans such as ViewHandlerResolvers, ConverterFactories, 
  Interceptors and so forth. All of these beans are part of Spring MVC which is a framework
  that structures how you handle web requests, providing useful features such as databinding,
  view resolution and request mapping.
 
- -->
-<!-- Create mvc Workspace
+ 
+ Create mvc Workspace
 
 	xmlns:mvc ="http://www.springframework.org/schema/mvc"
   	http://www.springframework.org/schema/mvc

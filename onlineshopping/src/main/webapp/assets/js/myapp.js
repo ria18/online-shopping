@@ -4,16 +4,15 @@
 	
 	switch (menu){
 	case 'About Us':
-	
-	     $('#nav-item about').removeClass('active');
+	     $('#.navbar-nav .nav-link').addClass('active');
 		break;
 		
 	case 'Contact Us':
-		$('#nav-item contact ').addClass('active');
+		$('#.navbar-nav .nav-link').addClass('active');
 		break;
 		
 	default:
-		$('#nav-item home').addClass('active');
+		$('#.navbar-nav .nav-link').addClass('active');
 		break;
 	}
 });
