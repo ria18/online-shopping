@@ -2,7 +2,7 @@
     pageEncoding="ISO-8859-1"%>
     <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
     <%@taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-   
+
     <!-- 3 variables to loading the statict resources  -->
     <spring:url var ="css" value ="resources/css" />
     <spring:url var ="js" value ="resources/js" />
@@ -19,7 +19,7 @@
 	    <meta name="description" content="">
 	    <meta name="author" content="">
 	
-	    <title>Online Shopping - ${title} </title>
+	    <title>Online shop - ${title} </title>
 	    
 	    <!-- Java-script -->
 	    <script >
@@ -28,14 +28,30 @@
 	    
 	    </script>
 	
-	    <!-- Bootstrap readable-theme -->
-	    <link href="${css}/bootstrap-readable-theme.css" rel="stylesheet">
 	    
-	     <!-- Bootstrap core CSS -->
-	     <link href="${css}/bootstrap.min.css" rel="stylesheet">
-	
-	    <!-- Custom styles for this template -->
-	    <link href="${css}/myapp.css" rel="stylesheet">
+<!-- Bootstrap Core CSS -->
+<link href="${css}/bootstrap.min.css" rel="stylesheet">
+
+<!-- Bootstrap Readable Theme -->
+<link href="${css}/bootstrap-readable-theme.css" rel="stylesheet">
+
+
+
+<!-- Bootstrap DataTables -->
+<link href="${css}/dataTables.bootstrap.css" rel="stylesheet">
+
+
+<!-- Custom CSS -->
+<link href="${css}/myapp.css" rel="stylesheet">
+
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
 	
 	  </head>
 	
@@ -44,18 +60,18 @@
 		<!--Footer div class  -->
 		<div class ="wrapper">
 		
-	    <!-- Navigation -->
+	   <!-- Navigation -->
 	  <%@ include file="./shared/navbar.jsp" %>
 	
-		<!-- Page content -->
+	<!-- Page content -->
 		
 		<div class ="content">
-	    <!-- Page Content: Loading the home content -->
+	 <!-- Page Content: Loading the home content -->
 		<c:if test="${userClickHome == true}">
 		<%@include file="home.jsp"%>
 		</c:if>
 		
-		<!-- Load only when user clicks about -->
+	<!-- Load only when user clicks about -->
 		<c:if test="${userClickAbout == true}">
 		<%@include file="about.jsp"%>
 		</c:if>
@@ -64,26 +80,40 @@
 		<%@include file="contact.jsp"%>
 		</c:if>
 		
-		<!--  when user click all Products -->
-		<c:if test="${userClickAllProducts == true or userClickCategoryProducts == true}">
-		<%@include file="listProducts.jsp"%>
-		</c:if>
+	<!-- Load only when user clicks CategoryProducts -->
+		<c:if test="${userClickAllProducts == true or userClickCategoryProducts == true }">
+				<%@include file="listProducts.jsp"%>
+			</c:if>	
+	<!-- Load only when user clicks show product -->
+			<c:if test="${userClickShowProduct == true}">
+				<%@include file="singleProduct.jsp"%>
+			</c:if>	
+	
 		
-		
-		
-		</div>
-	    <!-- Footer comes here -->
-	  <%@include file="./shared/footer.jsp" %>
+		</div> <!-- Class content -->
 
-		<!-- JQuery -->
-		<script src="${js} /jquery.js"></script>
+		<!-- Footer comes here -->
+		<%@include file="./shared/footer.jsp"%>
+
+		<!-- jQuery -->
+		<script src="${js}/jquery.js"></script>
+
+		<script src="${js}/jquery.validate.js"></script>
+
+		<!-- Bootstrap Core JavaScript -->
+		<script src="${js}/bootstrap.min.js"></script>
 		
-	     <!-- Bootstrap core JavaScript -->
-	    <script src="${js} /bootstrap.bundle.min.js"></script>
-	    <script src="${js} /bootstrap.min.js"></script>
-	    
-	    <!-- self coded javascript and linked the myapp.js here-->
-	     <script src="${js}/myapp.js"></script>
+		<!-- DataTable Plugin -->
+		<script src="${js}/jquery.dataTables.js"></script>
+		
+		<!-- DataTable Bootstrap Script -->
+		<script src="${js}/dataTables.bootstrap.js"></script>
+		
+		<!-- DataTable Bootstrap Script -->
+		<script src="${js}/bootbox.min.js"></script>
+		
+		<!-- Self coded javascript -->
+		<script src="${js}/myapp.js"></script>
 	
 	</div>
   </body>

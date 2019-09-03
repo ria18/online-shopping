@@ -2,6 +2,11 @@ package de.tqg.shoppingbackend.daoimpl;
 
 import java.util.ArrayList;
 import java.util.List;
+import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import org.springframework.stereotype.Repository;
 
@@ -20,7 +25,7 @@ public class CategoryDAOImpl implements CategoryDAO {
 		
 		// first category 
 		category.setId(1);
-		category.setName("Telefon");
+		category.setName("Handys");
 		category.setDescreption("this is some descraption for telefon");
 		
 		categories.add(category);
@@ -29,7 +34,7 @@ public class CategoryDAOImpl implements CategoryDAO {
 		// secound category 
 		category = new Category();
 		category.setId(2);
-		category.setName("TV");
+		category.setName("Waschmaschine");
 		category.setDescreption("this is some descraption for Televition");
 		
 		categories.add(category);
@@ -38,11 +43,17 @@ public class CategoryDAOImpl implements CategoryDAO {
 		// third category 
 		 category = new Category();
 		category.setId(3);
-		category.setName("Laptop");
+		category.setName("Computer");
 		category.setDescreption("this is some descraption for Laptop");
 		
 		
 		categories.add(category);
+		
+		 category = new Category();
+			category.setId(4);
+			category.setName("Games");
+			category.setDescreption("this is some descraption for Games");
+			categories.add(category);
 	}
 	
 	@Override
@@ -54,7 +65,7 @@ public class CategoryDAOImpl implements CategoryDAO {
 
 	@Override
 	public Category get(int id) {
-		// enchanced for loop
+		// get echt catgory by id
 		
 		for (Category category:categories) {
 			if(category.getId() == id)

@@ -31,6 +31,31 @@
 			<version>${spring.version}</version>
 		</dependency>
 		
+		<!-- hibernate -->
+		<dependency>
+	    	<groupId>org.hibernate</groupId>
+		    <artifactId>hibernate-core</artifactId>
+		    <version>5.4.3.Final</version>
+		</dependency>
+		<!-- spring framwork -->
+		<dependency>
+	    <groupId>org.springframework</groupId>
+		    <artifactId>spring-tx</artifactId>
+		    <version>3.0.5.RELEASE</version>
+		</dependency>
+		
+		<!-- Mysql driver -->
+		<dependency>
+    	<groupId>mysql</groupId>
+    		<artifactId>mysql-connector-java</artifactId>
+    		<version>8.0.16</version>
+		</dependency>
+		
+		 <dependency>
+        	<groupId>commons-pool</groupId>
+        	<artifactId>commons-pool</artifactId>
+        	<version>1.5.5</version>
+    	</dependency>
 		
 	</dependencies>
 	

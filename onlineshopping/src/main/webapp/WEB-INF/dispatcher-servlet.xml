@@ -28,7 +28,7 @@
    http://www.springframework.org/schema/mvc/spring-mvc.xsd
 
    ">
-   <context:component-scan base-package="de.tqg.onlineshopping.controller"/>
+   <context:component-scan base-package="de.tqg.onlineshopping"/>
    <context:component-scan base-package="de.tqg.shoppingbackend.daoimpl"/>
    <bean id = "viewResolver"
    class="org.springframework.web.servlet.view.InternalResourceViewResolver">

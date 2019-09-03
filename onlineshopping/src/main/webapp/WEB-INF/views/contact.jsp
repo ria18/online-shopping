@@ -3,6 +3,6 @@
 		<h1> Contact Us</h1>
 		<hr/>
 		
-	 <p>This is my Contact Us Page </p>
+	 <p>This is our Contact Page </p>
 </div>
 </div>

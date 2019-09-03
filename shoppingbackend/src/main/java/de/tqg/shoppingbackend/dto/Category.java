@@ -2,7 +2,12 @@ package de.tqg.shoppingbackend.dto;
 
 public class Category {
 
+	/*
+	 * private field 
+	 */
 	
+	private String imageURL;
+	private boolean active =true;
 	private int id;
 	private String name;
 	private String descreption;
@@ -36,10 +41,6 @@ public class Category {
 	public void setActive(boolean active) {
 		this.active = active;
 	}
-	private String imageURL;
-	private boolean active =true;
-	
-	
-	
+
 	
 }
