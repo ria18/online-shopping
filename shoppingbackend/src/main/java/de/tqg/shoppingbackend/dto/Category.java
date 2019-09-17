@@ -1,16 +1,21 @@
 package de.tqg.shoppingbackend.dto;
 
-public class Category {
+import java.io.Serializable;
 
-	/*
-	 * private field 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class Category implements Serializable {
+
+	/**
+	 * 
 	 */
-	
-	private String imageURL;
-	private boolean active =true;
-	private int id;
-	private String name;
-	private String descreption;
+	private static final long serialVersionUID = 1L;
+
 	public int getId() {
 		return id;
 	}
@@ -23,11 +28,11 @@ public class Category {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getDescreption() {
-		return descreption;
+	public String getDescription() {
+		return description;
 	}
-	public void setDescreption(String descreption) {
-		this.descreption = descreption;
+	public void setDescription(String description) {
+		this.description = description;
 	}
 	public String getImageURL() {
 		return imageURL;
@@ -41,6 +46,33 @@ public class Category {
 	public void setActive(boolean active) {
 		this.active = active;
 	}
+	
+	
+	
+	@Override
+	public String toString() {
+		return "Category [id=" + id + ", name=" + name + ", description=" + description + ", imageURL=" + imageURL
+				+ ", active=" + active + "]";
+	}
 
+
+
+	/*
+	 * Private fields
+	 * */
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
+	
+	private String name;
+	
+	private String description;
+	
+	@Column(name = "image_url")
+	private String imageURL;
+	
+	@Column(name = "is_active")
+	private boolean active = true;
+	
 	
 }

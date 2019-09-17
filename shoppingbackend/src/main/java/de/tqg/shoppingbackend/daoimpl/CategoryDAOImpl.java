@@ -2,8 +2,7 @@ package de.tqg.shoppingbackend.daoimpl;
 
 import java.util.ArrayList;
 import java.util.List;
-import org.hibernate.SessionFactory;
-import org.hibernate.query.Query;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -18,6 +17,10 @@ public class CategoryDAOImpl implements CategoryDAO {
 
  // just for testing 
 	
+	
+	@Autowired 
+//	private SessionFactory sessionFactory; 
+	
 	private static List <Category> categories =new ArrayList<>();
 	
 	static {
@@ -26,7 +29,7 @@ public class CategoryDAOImpl implements CategoryDAO {
 		// first category 
 		category.setId(1);
 		category.setName("Handys");
-		category.setDescreption("this is some descraption for telefon");
+		category.setDescription("this is some descraption for telefon");
 		
 		categories.add(category);
 		
@@ -35,7 +38,7 @@ public class CategoryDAOImpl implements CategoryDAO {
 		category = new Category();
 		category.setId(2);
 		category.setName("Waschmaschine");
-		category.setDescreption("this is some descraption for Televition");
+		category.setDescription("this is some descraption for Televition");
 		
 		categories.add(category);
 		
@@ -44,7 +47,7 @@ public class CategoryDAOImpl implements CategoryDAO {
 		 category = new Category();
 		category.setId(3);
 		category.setName("Computer");
-		category.setDescreption("this is some descraption for Laptop");
+		category.setDescription("this is some descraption for Laptop");
 		
 		
 		categories.add(category);
@@ -52,7 +55,7 @@ public class CategoryDAOImpl implements CategoryDAO {
 		 category = new Category();
 			category.setId(4);
 			category.setName("Games");
-			category.setDescreption("this is some descraption for Games");
+			category.setDescription("this is some descraption for Games");
 			categories.add(category);
 	}
 	
@@ -73,6 +76,22 @@ public class CategoryDAOImpl implements CategoryDAO {
 				return category;
 		}
 		return null;
+	}
+
+	@Override
+	@Transactional
+	public boolean add(Category category) {
+		 try {
+			 // add add the >category to the database 
+//			 sessionFactory.getCurrentSession().persist(category);
+			 
+			 return true;
+			 
+		 }catch (Exception e) {
+			 e.fillInStackTrace();
+			 return false;
+		 }
+		
 	}
 
 }

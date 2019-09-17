@@ -13,55 +13,86 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<spring.version>4.3.6.RELEASE </spring.version>
+		<spring.version>4.3.6.RELEASE</spring.version>
+		<hibernate.version>5.2.7.Final</hibernate.version>
 	</properties>
 
 	<dependencies>
+		<!-- JUNIT VERSION 4.12 -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>3.8.1</version>
+			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>
 		
-		<!-- Spring -->
+		<!-- SPRING -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${spring.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>commons-logging</groupId>
+					<artifactId>commons-logging</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-		
-		<!-- hibernate -->
+
 		<dependency>
-	    	<groupId>org.hibernate</groupId>
-		    <artifactId>hibernate-core</artifactId>
-		    <version>5.4.3.Final</version>
-		</dependency>
-		<!-- spring framwork -->
-		<dependency>
-	    <groupId>org.springframework</groupId>
-		    <artifactId>spring-tx</artifactId>
-		    <version>3.0.5.RELEASE</version>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>${spring.version}</version>
 		</dependency>
 		
-		<!-- Mysql driver -->
 		<dependency>
-    	<groupId>mysql</groupId>
-    		<artifactId>mysql-connector-java</artifactId>
-    		<version>8.0.16</version>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>${spring.version}</version>
+		</dependency>		
+		
+	<!-- H2 Database -->
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<version>1.4.196</version>
 		</dependency>
 		
-		 <dependency>
-        	<groupId>commons-pool</groupId>
-        	<artifactId>commons-pool</artifactId>
-        	<version>1.5.5</version>
-    	</dependency>
+		<!-- Hibernate Dependency -->		
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+		
+		
+		<!-- Database Connection Pooling -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-dbcp2</artifactId>
+			<version>2.1.1</version>
+			<exclusions>
+				<exclusion>
+					<groupId>commons-logging</groupId>
+					<artifactId>commons-logging</artifactId>
+				</exclusion>
+			</exclusions>			
+		</dependency>
+					
+
+
+
+		
 		
 	</dependencies>
-	
-	
 	<build>
-	<!-- Update to the last version of JAVA  -->
+		<!-- Updated for the latest version of JAVA -->
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -72,6 +103,5 @@
 				</configuration>
 			</plugin>
 		</plugins>
-
 	</build>
 </project>

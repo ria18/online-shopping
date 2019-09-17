@@ -54,7 +54,7 @@ public class PageController {
 	 * Methods to load all the products and based on category
 	 * */
 	
-	@RequestMapping(value = "/show/all/products")
+	@RequestMapping(value ="/show/all/products")
 	public ModelAndView showAllProducts() {		
 		ModelAndView mv = new ModelAndView("page");		
 		mv.addObject("title","All Products");
@@ -66,7 +66,7 @@ public class PageController {
 		return mv;				
 	}	
 	
-	@RequestMapping(value = "/show/category/{id}/products")
+	@RequestMapping(value ="/show/category/{id}/products")
 	public ModelAndView showCategoryProducts(@PathVariable("id") int id) {		
 		ModelAndView mv = new ModelAndView("page");
 		
@@ -75,7 +75,7 @@ public class PageController {
 		
 		category = categoryDAO.get(id);
 		
-		mv.addObject("title",category.getName());
+//		mv.addObject("title",category.getName());
 		
 		//passing the list of categories
 		mv.addObject("categories", categoryDAO.list());

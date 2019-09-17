@@ -4,6 +4,8 @@
 %>
 
  <h3 class="lead"> Your Shop Name GmbH </h3>
+ 
+
           <div class="list-group">
         
           <c:forEach items="${categories}" var ="category">
@@ -12,5 +14,4 @@
           
           
           </div>
-
-          
+		
